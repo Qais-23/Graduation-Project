@@ -1,0 +1,325 @@
+:root {
+    /* Color Variables */
+    --primary-color: #007bff;
+    --secondary-color: #0056b3;
+    --accent-color: #28a745;
+    --danger-color: #dc3545;
+    --light-gray: #f2f2f2;
+    --dark-gray: #333;
+    --white: #fff;
+    --black: #000;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-gray);
+    margin: 0;
+    padding: 0;
+    color: var(--dark-gray);
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: linear-gradient(90deg, #00cc69, #2844cf);
+    color: var(--white);
+    padding: 0.1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    animation: fadeIn 2s;
+}
+
+header nav {
+    display: flex;
+    gap: 15px;
+}
+
+header nav button {
+    background: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+header nav button:hover {
+    background: var(--white);
+    color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+    background-color: #222233;
+    color: var(--white);
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+footer a {
+    color: var(--white);
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--primary-color);
+}
+
+/* Buttons */
+button {
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
+}
+
+button[type="submit"] {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+button[type="submit"]:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+button[type="submit"]:active {
+    background-color: #004085;
+    transform: translateY(2px);
+}
+
+button[type="button1"] {
+    background-color: #3498db;
+    color: var(--white);
+    padding: 10px 20px;
+}
+
+button[type="button1"]:hover {
+    background-color: #2980b9;
+}
+
+/* Form Styling */
+.form-container {
+    max-width: 900px;
+    margin: 50px auto;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: grid;
+    gap: 25px;
+}
+
+label {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+input,
+textarea,
+select {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fafafa;
+    transition: border-color 0.3s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    background-color: var(--white);
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .form-container {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    table th,
+    table td {
+        padding: 10px;
+    }
+}
+
+/* Categories Section */
+.categories-section {
+    padding: 40px 20px;
+    background-color: var(--category-bg);
+    text-align: center;
+}
+
+.categories-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--dark-gray);
+}
+
+.categories-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.category-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    width: 220px;
+    background-color: var(--white);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    background-color: var(--category-hover-bg);
+}
+
+.category-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+.category-content {
+    padding: 15px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--dark-gray);
+}
+
+/* Error and Success Messages */
+.error-message,
+.success-message {
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.error-message {
+    background-color: var(--danger-color);
+    color: var(--white);
+    box-shadow: 0 4px 6px rgba(255, 0, 0, 0.1);
+}
+
+.success-message {
+    background-color: var(--accent-color);
+    color: var(--white);
+    box-shadow: 0 4px 6px rgba(0, 255, 0, 0.1);
+}
+
+.warning-message {
+    background-color: var(--warning-color);
+    color: var(--black);
+    box-shadow: 0 4px 6px rgba(255, 165, 0, 0.1);
+}
+
+/* Buttons for Category Actions */
+.category-action-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+.category-action-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+.category-action-btn:active {
+    background-color: #003d99;
+    transform: translateY(2px);
+}
+
+/* Responsive Design for Categories */
+@media (max-width: 768px) {
+    .categories-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .category-card {
+        width: 90%;
+    }
+}

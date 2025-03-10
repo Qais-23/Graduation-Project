@@ -1,0 +1,226 @@
+/* General Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f2f2f2;
+    color: #000000;
+    /* Changed to black */
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styling */
+h2,
+h3 {
+    color: #000000;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Chat Container */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* Chat Message Styling */
+.chat-message {
+    position: relative;
+    padding: 15px;
+    border-radius: 15px;
+    max-width: 75%;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    transition: all 0.3s ease;
+    animation: slideIn 0.5s ease-out;
+}
+
+.chat-message.customer {
+    background: #ecf0f1;
+    color: #000000;
+    /* Changed to black */
+    align-self: flex-start;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px 20px 0 20px;
+}
+
+.chat-message.support {
+    background: #3498db;
+    color: #000000;
+    /* Changed to black */
+    align-self: flex-end;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 20px 20px 20px 0;
+}
+
+/* Last Response Styling */
+.chat-message .last-response {
+    font-size: 12px;
+    color: #bdc3c7;
+    margin-top: 5px;
+    text-align: right;
+}
+
+/* Ticket Form Styling */
+form {
+    margin-top: 30px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #ff0000;
+    border-radius: 10px;
+    resize: vertical;
+    transition: all 0.3s ease;
+}
+
+textarea:focus {
+    border-color: #000000;
+    outline: none;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+}
+
+/* Alert Box Styling */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.alert-danger {
+    background-color: #e74c3c;
+    color: #000000;
+    /* Changed to black */
+    animation: fadeInAlert 0.5s ease-in-out;
+}
+
+.alert-success {
+    background-color: #2ecc71;
+    color: #000000;
+    /* Changed to black */
+    animation: fadeInAlert 0.5s ease-in-out;
+}
+
+/* Toggle Collapse Button */
+button[data-bs-toggle="collapse"] {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button[data-bs-toggle="collapse"]:hover {
+    background-color: #e67e22;
+    transform: scale(1.05);
+}
+
+/* Animation Keyframes */
+@keyframes slideIn {
+    0% {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInAlert {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .chat-message {
+        font-size: 14px;
+        padding: 12px;
+        max-width: 80%;
+    }
+
+    button {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+
+    textarea {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+
+/* Chat Message Box Styling */
+.chat-message-box {
+    background: #ffffff;
+    /* White background for message box */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.chat-message-box p {
+    color: #000000;
+    /* Black color for the message text */
+    font-size: 16px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+/* Last Response Styling */
+.chat-message-box .last-response {
+    font-size: 12px;
+    color: #bdc3c7;
+    margin-top: 5px;
+    text-align: right;
+}
